@@ -1,0 +1,24 @@
+
+@'
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Build output
+dist/
+build/
+coverage/
+
+# Logs and local files
+*.log
+.DS_Store
+Thumbs.db
+'@ | Set-Content .gitignore
