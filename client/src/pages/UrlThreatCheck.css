@@ -1,0 +1,362 @@
+
+/* =========================================================
+   CYBERSAFE — URL THREAT CHECK
+========================================================= */
+
+.url-page {
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(79, 140, 255, 0.12),
+      transparent 32%
+    ),
+    #050914;
+
+  color: #f7f9ff;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.url-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.url-sidebar {
+  width: 260px;
+  min-height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  background: #060c18;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 100;
+}
+
+.url-brand {
+  min-height: 95px;
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+}
+
+.url-brand-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+  background: linear-gradient(135deg, #4f8cff, #35d9ff);
+  box-shadow: 0 5px 20px rgba(79, 140, 255, 0.2);
+
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.url-brand strong {
+  display: block;
+  color: #f7f9ff;
+
+  font-family: "Space Grotesk", Arial, sans-serif;
+  font-size: 18px;
+}
+
+.url-brand span {
+  display: block;
+  margin-top: 4px;
+
+  color: #687791;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.url-nav {
+  padding: 24px 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.url-nav a {
+  min-height: 48px;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+
+  color: #8495b0;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.url-nav a:hover {
+  background: rgba(79, 140, 255, 0.08);
+  color: #ffffff;
+}
+
+.url-nav .url-nav-active {
+  background: rgba(79, 140, 255, 0.14);
+  color: #67a3ff;
+  border-left-color: #4f8cff;
+}
+
+.url-nav a span {
+  width: 30px;
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+/* =========================================================
+   SIDEBAR BOTTOM — HOME AND LOGOUT
+========================================================= */
+
+.url-sidebar-bottom {
+  margin-top: auto;
+  padding: 18px 12px 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.url-sidebar-bottom a,
+.url-sidebar-bottom button {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  color: #8495b0;
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  text-align: left;
+
+  transition: all 0.2s ease;
+}
+
+.url-sidebar-bottom a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Attractive logout button */
+.url-sidebar-bottom button {
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(79, 140, 255, 0.16),
+    rgba(53, 217, 255, 0.08)
+  );
+
+  color: #8ebaff;
+  border-color: rgba(79, 140, 255, 0.24);
+}
+
+.url-sidebar-bottom button:hover {
+  background: linear-gradient(135deg, #3478ed, #35bfe9);
+  border-color: transparent;
+  color: #8eb0dc;
+
+  box-shadow: 0 5px 18px rgba(53, 137, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.url-main {
+  width: calc(100% - 260px);
+  min-width: 0;
+  margin-left: 260px;
+
+  min-height: 100vh;
+  padding: 55px 5vw 80px;
+}
+
+.url-header {
+  max-width: 1100px;
+  margin: 0 auto 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.url-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  color: #5e9cff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.url-header h1 {
+  margin: 0;
+
+  font-family: "Space Grotesk", Arial, sans-serif;
+  font-size: clamp(36px, 4vw, 55px);
+  letter-spacing: -1.7px;
+  line-height: 1.15;
+}
+
+.url-header p {
+  max-width: 650px;
+  margin: 15px 0 0;
+
+  color: #89b6f9;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.url-header-icon {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  background: rgba(79, 140, 255, 0.08);
+  border: 1px solid rgba(79, 140, 255, 0.22);
+
+  font-size: 31px;
+}
+
+/* =========================================================
+   SHARED CARDS
+========================================================= */
+
+.url-scanner-card,
+.url-result-card,
+.url-history-card {
+  width: 100%;
+  max-width: 1100px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(13, 26, 48, 0.97),
+    rgba(7, 16, 31, 0.97)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+/* ===== FIX: ACTUAL URL PAGE BUTTON CLASSES ===== */
+
+.url-page button.url-scan-button {
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border: 1px solid #38bdf8 !important;
+  border-radius: 10px !important;
+  padding: 12px 20px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 18px rgba(6, 182, 212, 0.3) !important;
+  transition: all 0.25s ease !important;
+}
+
+.url-page button.url-scan-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #0891b2) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.url-page button.url-refresh-button {
+  background: linear-gradient(135deg, #1e40af, #0891b2) !important;
+  background-color: #1e40af !important;
+  color: #ffffff !important;
+  border: 1px solid #38bdf8 !important;
+  border-radius: 9px !important;
+  padding: 10px 16px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 3px 12px rgba(6, 182, 212, 0.2) !important;
+}
+
+.url-page button.url-refresh-button:hover {
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+  color: #ffffff !important;
+}
+
+.url-page button.url-logout {
+  background: linear-gradient(135deg, #1e40af, #0891b2) !important;
+  background-color: #1e40af !important;
+  color: #ffffff !important;
+  border: 1px solid #38bdf8 !important;
+  border-radius: 9px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+}
+
+.url-page button.url-logout:hover {
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+  color: #ffffff !important;
+}
